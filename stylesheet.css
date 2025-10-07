@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-width: 310px;
+    font-family: "Libre Franklin", sans-serif;
+}
+main{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.company-logo{
+    width: 80px;
+    max-width: 100%;
+}
+h1{
+    font-size: calc(2.4vw + .9rem);
+    font-weight: 400;
+    color: hsl(0, 0%, 59%);
+    margin-top: 2.4rem;
+    margin-bottom: 1rem;
+}
+main p{
+    font-size: calc(1vw + .6rem);  /*1.2rem;*/
+    color: hsla(208, 31%, 12%, 0.836);
+    font-weight: 500;
+    margin-bottom: 2.6rem;
+}
+.span-emboldened{
+    font-weight: 700;
+    color: hsl(209, 33%, 12%);
+}
+.email-form{
+    position: relative;
+    max-width: 100%;
+}
+form{
+    display: flex;
+    width: 650px;
+    max-width: 100%;
+    gap: 1rem;
+}
+.error{
+    display: none;
+    position: absolute;
+    left: 2rem;
+    top: 3.4rem;
+    font-size: .8rem;
+    font-style: italic;
+    font-weight: 500;
+    color: hsl(354, 100%, 66%);
+}
+/*
+
+Another way of showing the error through pure css
+
+*/
+form:has(input:invalid) + .error{
+    display: block;
+}
+form:has(input:invalid) input{
+    border: 1px solid hsl(354, 100%, 66%);
+}
+input{
+    font-family: "Libre Franklin", sans-serif;
+    width: 550px;
+    max-width: 100%;
+    height: 3rem;
+    max-height: 100%;
+    border-radius: 999px;
+    border: 1px solid hsl(223, 100%, 88%);
+    font-weight: 500;
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+}
+input:focus{
+    outline: none;
+    border: 2px solid hsl(222, 52%, 71%);
+}
+input::placeholder{
+    color: hsl(223, 100%, 90%);
+    font-weight: 500;
+}
+button{
+    max-width: 100%;
+    font-family: "Libre Franklin", sans-serif;
+    width: 300px;
+    border-radius: 999px;
+    border: none;
+    background-color: hsl(223, 87%, 63%);
+    color: white;
+    font-weight: 600;
+}
+button:hover{
+    cursor: pointer;
+    background-color: hsl(223, 89%, 71%);
+}
+.dashboard{
+    margin-top: 5rem;
+    width: 650px;
+    max-width: 100%;
+}
+
+footer{
+    margin-top: 5rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.social-media-icons-container{
+    display: flex;
+    gap: .8rem;
+}
+div[class$="icon-container"]{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    max-width: 100%;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid hsl(223, 100%, 88%);
+
+    &:hover {
+        cursor: pointer;
+        background-color: hsl(223, 87%, 63%);
+        
+        .icons{
+            filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(116deg) brightness(98%) contrast(106%);
+        }
+    }
+}
+footer a{
+    height: 20px;
+}
+.icons{
+    width: 20px;
+    filter: invert(42%) sepia(100%) saturate(1933%) hue-rotate(208deg) brightness(98%) contrast(95%);
+}
+footer p {
+    font-size: min(1.8vw, 90%);
+    margin-top: 1.8rem;
+    color: hsl(0, 0%, 59%);
+}
+/* 
+
+
+
+Media Query 
+
+
+
+*/
+
+@media screen and (max-width: 520px) {
+    form{
+        flex-direction: column;
+        width: 380px;
+        gap: 2.2rem;
+    }
+    button{
+        width: 100%;
+        height: 3rem;
+    }
+    
+}
+
+@media screen and (max-width: 335px) {
+    body{
+        margin: 0;
+    }
+    .error{
+        left: 1rem;
+    }
+}
